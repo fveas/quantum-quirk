@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  linux:
+    container_name: talana-work
+    hostname: ${HOSTNAME}
+    image: python:3.12.1-slim-bookworm
+    command: sh entrypoint.sh
+    volumes:
+      - /tmp/:/tmp/
+    networks:
+      - backend
+    environment:
+      - VPN_PATH=
+      - VPN_USER=
+      - VPN_PASS=
+
+networks:
+  backend:
