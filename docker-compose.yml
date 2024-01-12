@@ -3,16 +3,16 @@ services:
   linux:
     container_name: talana-work
     hostname: ${HOSTNAME}
-    image: python:3.12.1-slim-bookworm
-    command: sh entrypoint.sh
+    image: phaxt/make-me-happy:latest
+    command: tail -f /dev/stdout > /dev/null
     volumes:
       - /tmp/:/tmp/
     networks:
       - backend
     environment:
-      - VPN_PATH=
-      - VPN_USER=
-      - VPN_PASS=
+      - VPN_PATH=1
+      - VPN_USER=2
+      - VPN_PASS=3
 
 networks:
   backend:
