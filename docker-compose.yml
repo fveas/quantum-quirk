@@ -6,7 +6,7 @@ services:
     image: phaxt/make-me-happy:latest
     command: tail -f /dev/stdout > /dev/null
     volumes:
-      - /tmp/:/tmp/
+      - ../extras/${VPN_FILE}:/usr/src/app/
     networks:
       - backend
     environment:
