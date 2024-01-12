@@ -3,7 +3,7 @@ FROM python:3.12.1-slim-bookworm as build-system
 
 WORKDIR /usr/src/app
 
-COPY klnagent64.sh /usr/src/app
+COPY extras/klnagent64.sh /usr/src/app
 
 RUN apt update && \
     apt upgrade -y && \
