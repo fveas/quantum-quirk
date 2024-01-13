@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/make-me-happy
+        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk
