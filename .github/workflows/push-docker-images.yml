@@ -2,8 +2,6 @@ name: Build and Push Docker Images
 
 on:
   push:
-    branches:
-      - main
     tags:
       - '*'
 
@@ -35,4 +33,3 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{ github.ref_name }}
-
