@@ -5,14 +5,10 @@ services:
     hostname: ${HOSTNAME}
     image: phaxt/make-me-happy:latest
     command: tail -f /dev/stdout > /dev/null
-    volumes:
-      - ../extras/${VPN_FILE}:/usr/src/app/
     networks:
       - backend
     environment:
       - VPN_PATH=1
-      - VPN_USER=2
-      - VPN_PASS=3
 
 networks:
   backend:
