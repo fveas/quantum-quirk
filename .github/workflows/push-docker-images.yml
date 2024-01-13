@@ -22,10 +22,18 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Extract tag name
+      run: echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/})"
+      id: extract_tag
+
+    - name: Print tag name
+      run: echo "Tag Name ${{ steps.extract_tag.outputs.TAG_NAME }}"
+
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.1.0
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{github.ref_name}}
+        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{ steps.extract_tag.outputs.TAG_NAME }}
+
 
