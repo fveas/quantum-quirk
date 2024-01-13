@@ -34,4 +34,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{  github.ref_name }}"
+        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:latest
