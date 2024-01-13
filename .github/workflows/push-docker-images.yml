@@ -23,11 +23,11 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Extract tag name
-      run: echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/})"
+      run: echo "TAG_NAME=${GITHUB_TAG}"
       id: extract_tag
 
     - name: Print tag name
-      run: echo "Tag Name ${{ steps.extract_tag.outputs.TAG_NAME }}"
+      run: echo "Tag Name = ${{ steps.extract_tag.outputs.TAG_NAME }}
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.1.0
