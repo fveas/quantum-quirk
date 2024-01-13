@@ -27,11 +27,11 @@ jobs:
     - name: Get tags
       run: |
         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-        echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+        echo "Tag name from github.ref_name: ${{ github.ref_name }}"
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.1.0
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{  github.ref_name }}"
+        tags: ${{ secrets.DOCKER_USERNAME }}/quantum-quirk:${{ github.ref_name }}
