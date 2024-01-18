@@ -8,8 +8,8 @@ COPY extras/klnagent.sh /usr/src/app
 RUN apt update && \
     apt upgrade -y && \
     apt install -y vim && \
-    chmod u+x klnagent64.sh && \
-    bash klnagent64.sh && \
+    chmod u+x klnagent.sh && \
+    bash klnagent.sh && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
