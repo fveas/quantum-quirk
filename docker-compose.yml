@@ -3,7 +3,7 @@ services:
   linux:
     container_name: talana-work
     hostname: ${HOSTNAME}
-    image: phaxt/quantum-quirk:1.0
+    image: phaxt/quantum-quirk:latest
     command: tail -f /dev/stdout > /dev/null
     networks:
       - backend
